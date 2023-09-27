@@ -74,7 +74,7 @@ class ForegroundService: Service () {
             this , // Context
             0 , // request code
             notificationIntent, // Intent con la notificación
-            0
+            PendingIntent.FLAG_IMMUTABLE
         )
         val notification = NotificationCompat.Builder( this , CHANNEL_ID)
             .setContentTitle(getString(R.string.app_name))
@@ -96,7 +96,7 @@ class ForegroundService: Service () {
     }
 
     private fun notifyNextEvent() {
-        TODO("Not yet implemented")
+        Log.d("ForegroundService", "Notifying next event")
     }
 
     override fun onDestroy() {
